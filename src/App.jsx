@@ -20,6 +20,9 @@ function App() {
       <button onClick={() => dispatch({ type: "inc", payload: 1 })}>
         상태 ^
       </button>
+      <button onClick={() => dispatch({ type: "dec", payload: 1 })}>
+        상태 v
+      </button>
     </div>
   );
 }
