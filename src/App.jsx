@@ -17,6 +17,9 @@ function App() {
       <button onClick={() => setCount(count - 1)}>감소 1</button>
       <br />
       상태: {state}
+      <button onClick={() => dispatch({ type: "inc", payload: 1 })}>
+        상태 ^
+      </button>
     </div>
   );
 }
