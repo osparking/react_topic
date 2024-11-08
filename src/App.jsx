@@ -5,9 +5,9 @@ function App() {
 
   function reducer(state, action) {
     if (action.type == "inc") {
-      return { ...state, count: state.count + action.payload };
+      return { ...state, count: state.count + state.delta };
     } else if (action.type == "dec") {
-      return { ...state, count: state.count - action.payload };
+      return { ...state, count: state.count - state.delta };
     } else if (action.type == "delta") {
       return { ...state, delta: action.payload };
     }
@@ -25,12 +25,8 @@ function App() {
         />
       </div>
       상태: {state.count}
-      <button onClick={() => dispatch({ type: "inc", payload: state.delta })}>
-        상태 ^
-      </button>
-      <button onClick={() => dispatch({ type: "dec", payload: state.delta })}>
-        상태 v
-      </button>
+      <button onClick={() => dispatch({ type: "inc" })}>상태 ^</button>
+      <button onClick={() => dispatch({ type: "dec" })}>상태 v</button>
     </div>
   );
 }
