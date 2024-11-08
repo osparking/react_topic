@@ -1,8 +1,7 @@
-import { useReducer, useState } from "react";
+import { useReducer } from "react";
 
 function App() {
-  const [count, setCount] = useState(0);
-  const [state, dispatch] = useReducer(reducer, 0);
+  const [state, dispatch] = useReducer(reducer, { count: 0 });
   function reducer(state, action) {
     if (action.type == "inc") {
       return state + action.payload;
@@ -12,10 +11,6 @@ function App() {
   }
   return (
     <div className="App">
-      계수: {count}
-      <button onClick={() => setCount(count + 1)}>증가 1</button>
-      <button onClick={() => setCount(count - 1)}>감소 1</button>
-      <br />
       상태: {state}
       <button onClick={() => dispatch({ type: "inc", payload: 1 })}>
         상태 ^
