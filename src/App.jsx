@@ -19,18 +19,16 @@ function App() {
         <input
           type="text"
           value={state.delta}
-          onChange={(e) => dispatch({ type: "delta", payload: e.target.value })}
+          onChange={(e) =>
+            dispatch({ type: "delta", payload: Number(e.target.value) })
+          }
         />
       </div>
       상태: {state.count}
-      <button
-        onClick={() => dispatch({ type: "inc", payload: Number(state.delta) })}
-      >
+      <button onClick={() => dispatch({ type: "inc", payload: state.delta })}>
         상태 ^
       </button>
-      <button
-        onClick={() => dispatch({ type: "dec", payload: Number(state.delta) })}
-      >
+      <button onClick={() => dispatch({ type: "dec", payload: state.delta })}>
         상태 v
       </button>
     </div>
