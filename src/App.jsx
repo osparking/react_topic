@@ -23,10 +23,14 @@ function App() {
         />
       </div>
       상태: {state.count}
-      <button onClick={() => dispatch({ type: "inc", payload: 1 })}>
+      <button
+        onClick={() => dispatch({ type: "inc", payload: Number(state.delta) })}
+      >
         상태 ^
       </button>
-      <button onClick={() => dispatch({ type: "dec", payload: 1 })}>
+      <button
+        onClick={() => dispatch({ type: "dec", payload: Number(state.delta) })}
+      >
         상태 v
       </button>
     </div>
