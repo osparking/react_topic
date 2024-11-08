@@ -1,5 +1,12 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 function App() {
-  return <div>이것은 응용 (대문) 페이지이다.</div>;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="" element={} />
+      </Routes>
+    </BrowserRouter>
+  )
 }
 
 export default App;
