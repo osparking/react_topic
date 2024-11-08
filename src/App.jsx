@@ -8,13 +8,19 @@ function App() {
       return { ...state, count: state.count + action.payload };
     } else if (action.type == "dec") {
       return { ...state, count: state.count - action.payload };
+    } else if (action.type == "delta") {
+      return { ...state, delta: action.payload };
     }
   }
   return (
     <div className="App">
       <div>
         변화량:
-        <input type="text" value={state.delta} />
+        <input
+          type="text"
+          value={state.delta}
+          onChange={(e) => dispatch({ type: "delta", payload: e.target.value })}
+        />
       </div>
       상태: {state.count}
       <button onClick={() => dispatch({ type: "inc", payload: 1 })}>
