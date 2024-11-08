@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import AppBank from "./AppBank";
+import App from "./App";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <AppBank />
+    <App />
   </React.StrictMode>
 );
