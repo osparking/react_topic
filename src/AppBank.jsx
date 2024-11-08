@@ -4,6 +4,9 @@ export default function AppBank() {
     if (action.type === "withdraw") {
       return { balance: state.balance - amount };
     }
+    if (action.type === "deposit") {
+      return { balance: state.balance + amount };
+    }
   }
   const [amount, setAmount] = useState(0);
   const [state, dispatch] = useReducer(reducer, { balance: 0 });
@@ -21,13 +24,7 @@ export default function AppBank() {
         />
       </div>
       <div>
-        <button
-          onClick={() => {
-            console.log(state.balance);
-          }}
-        >
-          입금
-        </button>
+        <button onClick={() => dispatch({ type: "deposit" })}>입금</button>
         <button onClick={() => dispatch({ type: "withdraw" })}>출금</button>
       </div>
     </div>
