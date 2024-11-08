@@ -2,10 +2,10 @@ import { useReducer, useState } from "react";
 export default function AppBank() {
   function reducer(state, action) {
     if (action.type === "withdraw") {
-      return { balance: state.balance - amount };
+      return { ...state, balance: state.balance - amount };
     }
     if (action.type === "deposit") {
-      return { balance: state.balance + amount };
+      return { ...state, balance: state.balance + amount };
     }
   }
   const [amount, setAmount] = useState(0);
