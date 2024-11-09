@@ -3,6 +3,7 @@ import Dashboard from "./pages/Dashboard";
 import Homepage from "./pages/Homepage";
 import Nav from "./pages/Nav";
 import PageNotFound from "./pages/PageNotFound";
+import Products from "./pages/Products";
 import Profile from "./pages/Profile";
 import Settings from "./pages/Settings";
 function App() {
@@ -11,6 +12,7 @@ function App() {
       <Nav />
       <Routes>
         <Route path="/" element={<Homepage />} />
+        <Route path="/products" element={<Products />} />
         <Route path="/dashboard" element={<Dashboard />}>
           <Route path="profile" element={<Profile />} />
           <Route path="settings" element={<Settings />} />
