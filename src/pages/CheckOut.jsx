@@ -1,3 +1,6 @@
+import { useContext } from "react";
+import { userContext } from "./AppContext";
 export default function CheckOut() {
-  return <div>첵크아웃</div>;
+  const value = useContext(userContext);
+  return <div>'{value}' 첵크아웃</div>;
 }
