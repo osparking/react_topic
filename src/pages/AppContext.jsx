@@ -1,11 +1,11 @@
 import { createContext } from "react";
 import CheckOut from "./CheckOut";
+export const userContext = createContext();
 
 function AppContext() {
-  const userContext = createContext();
   return (
     <div>
-      <userContext.Provider>
+      <userContext.Provider value="guest">
         <CheckOut />
       </userContext.Provider>
     </div>
