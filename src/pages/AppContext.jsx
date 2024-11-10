@@ -6,7 +6,12 @@ function AppContext() {
   const [user, setUser] = useState("guest");
   return (
     <div>
-      <userContext.Provider value={{user}}>
+      <input
+        type="text"
+        value={user}
+        onChange={(e) => setUser(e.target.value)}
+      />
+      <userContext.Provider value={{ user }}>
         <CheckOut />
       </userContext.Provider>
     </div>
