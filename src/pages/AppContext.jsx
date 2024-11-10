@@ -7,8 +7,8 @@ function AppContext() {
   const [user, setUser] = useState("guest");
   return (
     <div>
-      <Login />
-      <userContext.Provider value={{ user }}>
+      <userContext.Provider value={{ user, setUser }}>
+        <Login />
         <CheckOut />
       </userContext.Provider>
     </div>
