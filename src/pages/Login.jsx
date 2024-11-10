@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { userContext } from "./AppContext";
 export default function Login() {
   const [userId, setUserId] = useState("");
-  const { user, setUser } = useContext(userContext);
+  const { setUser } = useContext(userContext);
   function handleSubmit(e) {
     e.preventDefault();
     setUser(userId);
