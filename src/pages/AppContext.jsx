@@ -1,13 +1,14 @@
-import { useState } from "react";
+import { UserProvider } from "../context/UserContext";
 import CheckOut from "./CheckOut";
 import Login from "./Login";
 
 function AppContext() {
-  const [user, setUser] = useState("guest");
   return (
     <div>
-      <Login />
-      <CheckOut />
+      <UserProvider>
+        <Login />
+        <CheckOut />
+      </UserProvider>
     </div>
   );
 }
