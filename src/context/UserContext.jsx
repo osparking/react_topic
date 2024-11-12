@@ -4,7 +4,7 @@ function UserProvider({ children }) {
   function reducer(state, action) {
     switch (action.type) {
       case "login":
-        return "";
+        return action.payload;
       case "logout":
         return "";
       default:
