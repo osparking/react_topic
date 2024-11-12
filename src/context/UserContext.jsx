@@ -6,7 +6,7 @@ function UserProvider({ children }) {
       case "login":
         return action.payload;
       case "logout":
-        return "";
+        return "guest";
       default:
         return state;
     }

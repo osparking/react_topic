@@ -1,10 +1,12 @@
 import { useContext } from "react";
 import { UserContext } from "../context/UserContext";
 export default function Logout() {
-  const { setUser } = useContext(UserContext);
+  const { dispatch } = useContext(UserContext);
   return (
     <default>
-      <button onClick={() => setUser("guest")}>로그아웃</button>
+      <button onClick={() => dispatch({ type: "logout"})}>
+        로그아웃
+      </button>
     </default>
   );
 }
