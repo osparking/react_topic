@@ -1,8 +1,7 @@
-import { createContext, useState } from "react";
+import { createContext, useReducer, useState } from "react";
 const UserContext = createContext();
-
 function UserProvider({ children }) {
-  const [user, setUser] = useState("guest");
+  const [user, dispatch] = useReducer(reducer, "");
   return (
     <UserContext.Provider value={{ user, setUser }}>
       {children}
