@@ -2,10 +2,10 @@ import { useContext, useState } from "react";
 import { UserContext } from "../context/UserContext";
 export default function Login() {
   const [userId, setUserId] = useState("");
-  const { setUser } = useContext(UserContext);
+  const { dispatch } = useContext(UserContext);
   function handleSubmit(e) {
     e.preventDefault();
-    setUser(userId);
+    dispatch({type: "login", payload: userId});
   }
   return (
     <div>

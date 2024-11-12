@@ -13,7 +13,7 @@ function UserProvider({ children }) {
   }
   const [user, dispatch] = useReducer(reducer, "");
   return (
-    <UserContext.Provider value={{ user, setUser }}>
+    <UserContext.Provider value={{ user, dispatch }}>
       {children}
     </UserContext.Provider>
   );
